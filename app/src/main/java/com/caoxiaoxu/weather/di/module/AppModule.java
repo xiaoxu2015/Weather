@@ -1,6 +1,7 @@
 package com.caoxiaoxu.weather.di.module;
 
 import com.caoxiaoxu.weather.WeatherApplication;
+import com.google.gson.Gson;
 
 import javax.inject.Singleton;
 
@@ -23,5 +24,11 @@ public class AppModule {
     @Singleton
     public WeatherApplication provideApplication() {
         return mApplication;
+    }
+
+    @Provides
+    @Singleton
+    public Gson provideGson() {
+        return new Gson();
     }
 }

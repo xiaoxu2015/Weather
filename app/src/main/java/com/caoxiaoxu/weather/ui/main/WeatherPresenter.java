@@ -5,8 +5,15 @@ package com.caoxiaoxu.weather.ui.main;
  */
 
 public class WeatherPresenter implements WeatherContract.Presenter {
+    private WeatherContract.View mView;
+
+    public WeatherPresenter(WeatherContract.View mView) {
+        this.mView = mView;
+    }
+
     @Override
     public void getWeather() {
+        mView.setWeather();
 
     }
 }

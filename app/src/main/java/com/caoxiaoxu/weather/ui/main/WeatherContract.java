@@ -1,8 +1,11 @@
 package com.caoxiaoxu.weather.ui.main;
 
 import com.caoxiaoxu.weather.base.contract.BaseContract;
+import com.caoxiaoxu.weather.data.bean.AppInfo;
+import com.caoxiaoxu.weather.data.bean.PageBean;
 
 import okhttp3.OkHttpClient;
+import retrofit2.Callback;
 
 /**
  * Created by T560 on 2018/11/29.
@@ -11,11 +14,11 @@ import okhttp3.OkHttpClient;
 public class WeatherContract {
 
     public interface Model extends BaseContract.BaseModel {
-        void setWeather(String str);
+        void setWeather(Callback<PageBean<AppInfo>> callbackr);
     }
 
     public interface View extends BaseContract.BaseView {
-        void getWeather();
+        void setWeather();
     }
 
     public interface Presenter extends BaseContract.BasePresenter {
