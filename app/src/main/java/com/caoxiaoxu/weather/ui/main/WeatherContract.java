@@ -4,6 +4,7 @@ import com.caoxiaoxu.weather.base.contract.BaseContract;
 import com.caoxiaoxu.weather.data.bean.AppInfo;
 import com.caoxiaoxu.weather.data.bean.PageBean;
 
+import io.reactivex.Observable;
 import okhttp3.OkHttpClient;
 import retrofit2.Callback;
 
@@ -14,7 +15,7 @@ import retrofit2.Callback;
 public class WeatherContract {
 
     public interface Model extends BaseContract.BaseModel {
-        void setWeather(Callback<PageBean<AppInfo>> callbackr);
+        Observable<PageBean<AppInfo>> setWeather();
     }
 
     public interface WeatherView extends BaseContract.BaseView {

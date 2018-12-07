@@ -1,9 +1,12 @@
 package com.caoxiaoxu.weather.ui.main;
 
+import android.util.Log;
+
 import com.caoxiaoxu.weather.data.bean.AppInfo;
 import com.caoxiaoxu.weather.data.bean.PageBean;
 import com.caoxiaoxu.weather.data.net.ApiService;
 
+import io.reactivex.Observable;
 import retrofit2.Callback;
 
 /**
@@ -18,8 +21,9 @@ public class WeatherModel implements WeatherContract.Model {
     }
 
     @Override
-    public void setWeather(Callback<PageBean<AppInfo>> callback) {
-        mApiService.getApps("{'page':0}").enqueue(callback);
+    public Observable<PageBean<AppInfo>> setWeather() {
+        Log.e("xxxx", "page");
+        return mApiService.getApps("{'page':0}");
 
     }
 }
