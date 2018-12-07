@@ -17,11 +17,11 @@ public class WeatherContract {
         void setWeather(Callback<PageBean<AppInfo>> callbackr);
     }
 
-    public interface View extends BaseContract.BaseView {
+    public interface WeatherView extends BaseContract.BaseView {
         void setWeather();
     }
 
-    public interface Presenter extends BaseContract.BasePresenter {
-        void getWeather();
-    }
+//    public interface Presenter extends BaseContract.BasePresenter {
+//        void getWeather();
+//    }
 }

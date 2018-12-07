@@ -14,19 +14,16 @@ import dagger.Provides;
  */
 @Module
 public class WeatherModule {
-    private WeatherContract.View mView;
+    private WeatherContract.WeatherView mView;
 
-    public WeatherModule(WeatherContract.View mView) {
+    public WeatherModule(WeatherContract.WeatherView mView) {
         this.mView = mView;
     }
 
-    @Provides
-    public WeatherContract.Presenter providePresenter(WeatherContract.View view) {
-        return new WeatherPresenter(view);
-    }
+
 
     @Provides
-    public WeatherContract.View provideView() {
+    public WeatherContract.WeatherView provideView() {
         return mView;
     }
 
