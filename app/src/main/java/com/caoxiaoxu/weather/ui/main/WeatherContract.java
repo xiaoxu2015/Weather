@@ -1,12 +1,10 @@
 package com.caoxiaoxu.weather.ui.main;
 
+import com.caoxiaoxu.weather.base.bean.BaseBean;
 import com.caoxiaoxu.weather.base.contract.BaseContract;
-import com.caoxiaoxu.weather.data.bean.AppInfo;
-import com.caoxiaoxu.weather.data.bean.PageBean;
+import com.caoxiaoxu.weather.data.bean.Weather;
 
-import io.reactivex.Observable;
-import okhttp3.OkHttpClient;
-import retrofit2.Callback;
+import rx.Observable;
 
 /**
  * Created by T560 on 2018/11/29.
@@ -15,7 +13,7 @@ import retrofit2.Callback;
 public class WeatherContract {
 
     public interface Model extends BaseContract.BaseModel {
-        Observable<PageBean<AppInfo>> setWeather();
+        Observable<BaseBean<Weather>> getWeather();
     }
 
     public interface WeatherView extends BaseContract.BaseView {

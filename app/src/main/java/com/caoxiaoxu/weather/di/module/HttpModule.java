@@ -1,5 +1,9 @@
 package com.caoxiaoxu.weather.di.module;
 
+import android.app.Application;
+
+import com.caoxiaoxu.weather.WeatherApplication;
+import com.caoxiaoxu.weather.common.rx.RxErrorHandler;
 import com.caoxiaoxu.weather.data.net.ApiService;
 
 import java.util.concurrent.TimeUnit;
@@ -11,7 +15,7 @@ import dagger.Provides;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
+import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
@@ -51,7 +55,7 @@ public class HttpModule {
         Retrofit.Builder builder = new Retrofit.Builder()
                 .baseUrl(ApiService.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .client(okHttpClient);
         return builder.build();
     }
@@ -62,4 +66,12 @@ public class HttpModule {
     public ApiService provideApiSevice(Retrofit retrofit) {
         return retrofit.create(ApiService.class);
     }
+
+    @Provides
+    @Singleton
+    public RxErrorHandler provideErrorHandler(WeatherApplication application) {
+        return new RxErrorHandler(application);
+    }
+
+
 }

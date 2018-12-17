@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">Weather</string>
+    <string name="error_unkown">未知错误</string>
+    <string name="error_http">网络连接错误</string>
+    <string name="error_system">服务器出错</string>
+    <string name="error_account_freeze">账户被冻结，请联系管理员</string>
+    <string name="error_api_no_perission">调用了无权限的API接口</string>
+    <string name="error_login">用户名或者密码错误</string>
+    <string name="error_http_400">bad request</string>
+    <string name="error_http_404">服务器资源找不到</string>
+    <string name="error_http_500">服务器错误</string>
+    <string name="error_socket_timeout">网络超时</string>
+    <string name="error_socket_unreachable">网络不可用</string>
+    <string name="loading">加载中...</string>
+    <string name="invalid_key">错误的key，请检查你的key是否输入以及是否输入有误</string>
+    <string name="unknown_location">未知或错误城市/地区</string>
+    <string name="no_data_for_this_location">该城市/地区没有你所请求的数据</string>
+    <string name="no_more_requests">超过访问次数，需要等到当月最后一天24点（免费用户为当天24点）后进行访问次数的重置或升级你的访问量</string>
+    <string name="param_invalid">参数错误，请检查你传递的参数是否正确</string>
+    <string name="too_fast">超过限定的QPM，请参考QPM说明</string>
+    <string name="dead">无响应或超时，接口服务异常请联系我们</string>
+    <string name="permission_denied">无访问权限，你没有购买你所访问的这部分服务</string>
+    <string name="sign_error">签名错误，请参考签名算法</string>
+    <string name="no_data">没有返回值</string>
 </resources>

@@ -2,6 +2,8 @@ package com.caoxiaoxu.weather.ui.main;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.caoxiaoxu.weather.R;
@@ -10,8 +12,12 @@ import com.caoxiaoxu.weather.di.component.AppComponent;
 import com.caoxiaoxu.weather.di.component.DaggerWeatherComponent;
 import com.caoxiaoxu.weather.di.module.WeatherModule;
 
+import butterknife.BindView;
+
 public class MainActivity extends BaseActivity<WeatherPresenter> implements WeatherContract.WeatherView {
 
+    @BindView(R.id.tv_hello)
+    Button mTvHello;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +33,7 @@ public class MainActivity extends BaseActivity<WeatherPresenter> implements Weat
 
     @Override
     public void initView() {
-        findViewById(R.id.tv_hello).setOnClickListener(new View.OnClickListener() {
+        mTvHello.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mPresenter.getWeather();
@@ -46,15 +52,6 @@ public class MainActivity extends BaseActivity<WeatherPresenter> implements Weat
         DaggerWeatherComponent.builder().appComponent(appComponent).weatherModule(new WeatherModule(this)).build().inject(this);
     }
 
-    @Override
-    public void showLoadingDialog() {
-
-    }
-
-    @Override
-    public void dismissLoadingDialog() {
-
-    }
 
 
     @Override
